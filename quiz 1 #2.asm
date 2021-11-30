@@ -60,6 +60,7 @@ main:
 	
 	li	$v0, 2				# cout << ax^2 + bx + c
 	mov.s	$f12, $f0
+	syscall
 	
 	li	$v0, 10
 	syscall 
