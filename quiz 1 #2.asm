@@ -22,6 +22,7 @@ main:
 	syscall 
 	
 	li	$v0, 5				# cin >> $f1 
+	syscall
 	mov.s	$f0, $f1 			# $f1 = x
 	
 	la	$a0, str2			# cout << str2
@@ -29,6 +30,7 @@ main:
 	syscall 
 	
 	li	$v0, 5				# cin >> $f2 
+	syscall
 	mov.s	$f0, $f2  			# $f2 = a
 	
 	la	$a0, str3			# cout << str3
@@ -36,6 +38,7 @@ main:
 	syscall 
 	
 	li	$v0, 5				# cin >> $f3 
+	syscall
 	mov.s	$f0, $f3  			# $f3 = b
 
 	la	$a0, str4			# cout << str4
@@ -43,6 +46,7 @@ main:
 	syscall 
 	
 	li	$v0, 5				# cin >> $f4
+	syscall
 	mov.s	$f0, $f4  			# $f4 = c
 	
 	mul.s	$f0, $f1, $f2			# $f0 = ax
