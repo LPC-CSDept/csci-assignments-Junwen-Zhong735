@@ -21,9 +21,9 @@ main:
 	
 	li	$v0, 6				# cin >> n 
 	
-	li	$f1, 1				# $f1 = x = 1
-	li 	$f2, 2				# $f2 = 2
-	li	$f3, 0.00001			# $f3 = 0.00001
+	li.s	$f1, 1.0			# $f1 = x = 1
+	li.s 	$f2, 2.0			# $f2 = 2
+	li.s	$f3, 0.00001			# $f3 = 0.00001
 	
 loop: 
 	div.s	$f4, $f0, $f1			# $f4 = n/x
@@ -36,7 +36,10 @@ loop:
 	sub.s 	$f5, $f4, $f1			# $f5 = x' - x
 	abs.s 	$f5, $f5			# $f5 = | x' - x |
 	c.lt.s	$f5, $f3			# | x' - x | < 0.00001
-	bf1f.s	loop 
+	bc1t	exit 
+	mop 
+	mov.s 	$f1, $f4			# x' = x 
+	j loop 
 	nop 
 	
 exit: 
