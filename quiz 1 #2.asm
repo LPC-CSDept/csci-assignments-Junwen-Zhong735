@@ -50,8 +50,12 @@ main:
 	mov.s	$f4, $f0  			# $f4 = c
 	
 	mul.s	$f0, $f1, $f2			# $f0 = ax
+	nop 
+	nop
 	add.s	$f0, $f0, $f3			# $f0 = ax + b
 	mul.s	$f0, $f0, $f1			# $f0 = ax^2 + bx
+	nop
+	nop
 	add.s	$f0, $f0, $f4			# $f0 = ax^2 + bx + c
 	
 	la	$a0, str5			# cout << str5
@@ -60,6 +64,7 @@ main:
 	
 	li	$v0, 2				# cout << ax^2 + bx + c
 	mov.s	$f12, $f0
+	nop
 	syscall
 	
 	li	$v0, 10
