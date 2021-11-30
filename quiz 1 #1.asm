@@ -10,7 +10,6 @@
 	.data 
 prompt1:	.asciiz, "Enter an integer tempeture in Celsius: "
 str1:	.asciiz, "The tempeture in Fahrenheit is: "
-str2:	.asciiz, "\n"
 	
 	.text
 	.globl main
