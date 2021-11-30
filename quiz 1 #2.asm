@@ -21,33 +21,33 @@ main:
 	li	$v0, 4
 	syscall 
 	
-	li	$v0, 5				# cin >> $f1 
+	li	$v0, 6				# cin >> $f1
 	syscall
-	mov.s	$f0, $f1 			# $f1 = x
+	mov.s	$f1, $f0 			# $f1 = x
 	
 	la	$a0, str2			# cout << str2
 	li	$v0, 4
 	syscall 
 	
-	li	$v0, 5				# cin >> $f2 
+	li	$v0, 6				# cin >> $f2
 	syscall
-	mov.s	$f0, $f2  			# $f2 = a
+	mov.s	$f2, $f0  			# $f2 = a
 	
 	la	$a0, str3			# cout << str3
 	li	$v0, 4
 	syscall 
 	
-	li	$v0, 5				# cin >> $f3 
+	li	$v0, 6				# cin >> $f3
 	syscall
-	mov.s	$f0, $f3  			# $f3 = b
+	mov.s	$f3, $f0  			# $f3 = b
 
 	la	$a0, str4			# cout << str4
 	li	$v0, 4
 	syscall 
 	
-	li	$v0, 5				# cin >> $f4
+	li	$v0, 6				# cin >> $f4
 	syscall
-	mov.s	$f0, $f4  			# $f4 = c
+	mov.s	$f4, $f0  			# $f4 = c
 	
 	mul.s	$f0, $f1, $f2			# $f0 = ax
 	add.s	$f0, $f0, $f3			# $f0 = ax + b
@@ -64,6 +64,4 @@ main:
 	
 	li	$v0, 10
 	syscall 
-	
-	
 	
