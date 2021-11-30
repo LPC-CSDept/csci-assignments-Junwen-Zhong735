@@ -19,7 +19,7 @@ main:
 	li	$v0, 4		
 	syscall 
 	
-	li	$v0, 5					# cin >> $f0;
+	li	$v0, 5				# cin >> $f0;
 	syscall
 	mtc1	$v0, $f0
 	cvt.s.w	$f0, $f0 
@@ -31,13 +31,13 @@ main:
 	li.s	$f2, 32.0			# $f2 = $f0 - 32;
 	sub.s 	$f2, $f0, $f2
 	
-	mul.s 	$f12, $f1, $f2 		# $f12 = $f1 * $f2;
+	mul.s 	$f12, $f1, $f2 			# $f12 = $f1 * $f2;
 	
-	la	$a0, str2				# cout << str2;
+	la	$a0, str2			# cout << str2;
 	li	$v0, 4 
 	syscall 
 	
-	li	$v0, 2					# cout << $f12;
+	li	$v0, 2				# cout << $f12;
 	syscall 
 	
 	li	$v0, 10
