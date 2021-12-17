@@ -18,6 +18,20 @@ waiting:
 	
 	sub	$t0,$t0, 1				# increment counter
 	beqz 	$t0,  transmit		# end loop after 3 digits 
+    
+	j waiting 					# continue loop 
+	
+digit2: 
+	li 	$t1, 10 				# multiply by 10 for 2nd digit 
+	mult	$s1, $t1 
+	mflo	$t1 
+	add 	$s2, $s2, $t1		# combine 1st digit and 2nd digit 
 
 
     j waiting 					# continue loop 
+
+transmit: 
+    add 	$a0, $s2, $s1 		# combine all 3 digits 
+	li 	$v0, 1 					# print decimal (integer) 
+
+	li 	$v0, 10					# end program  
