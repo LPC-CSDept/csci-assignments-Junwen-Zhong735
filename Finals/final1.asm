@@ -24,7 +24,6 @@ waiting:
     li	$t1, 1					# determine if 1st digit 
 	beq	$t0, $t1, digit2		# branch if 2nd digit 
 
-digit1: 
     li  $t1, 100                # multiply by 100 for 1st digit 
     mult	$s1, $t1 
     mflo    $s2 
