@@ -18,9 +18,14 @@ waiting:
 	
 	sub	$t0,$t0, 1				# increment counter
 	beqz 	$t0,  transmit		# end loop after 3 digits 
-    
-	j waiting 					# continue loop 
+
+    j waiting 					# continue loop 
 	
+digit1: 
+    li  $t1, 100                # multiply by 100 for 1st digit 
+    mult	$s1, $t1 
+    mflo    $s2 
+
 digit2: 
 	li 	$t1, 10 				# multiply by 10 for 2nd digit 
 	mult	$s1, $t1 
