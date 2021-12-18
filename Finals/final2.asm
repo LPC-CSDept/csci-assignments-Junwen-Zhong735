@@ -21,3 +21,14 @@ loop:
 exit: 
 	li 	$v0, 10 				# end program 
 	syscall 
+
+# kernel text 
+	.ktext 0x80000180     		# kernel code starts here
+	
+	sw	$v0, data1     			# save registers that will be used to memory     
+	sw	$a0, data2
+	
+	mfc0	$k0, $13     		# Cause register     
+	srl	$a0, $k0, 2     		# Extract ExcCode Field     
+	andi	$a0, $a0, 0x1f  	# Get the exception code     
+	bne	$a0, $zero, kdone   	# Exception Code 0 is I/O.
