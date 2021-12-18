@@ -32,3 +32,13 @@ exit:
 	srl	$a0, $k0, 2     		# Extract ExcCode Field     
 	andi	$a0, $a0, 0x1f  	# Get the exception code     
 	bne	$a0, $zero, kdone   	# Exception Code 0 is I/O.
+
+kdone:     
+	lw	$v0, data1     			# Restore saved registers     
+	lw	$a0, data2     
+	mtc0	$0, $13     		# Clear Cause register     
+	mfc0	$k0, $12     		# Set Status register     
+	andi	$k0, 0xfffd  		# clear EXL bit d = 1101   
+	ori	$k0, 0x11     			# Interrupts enabled     
+	mtc0	$k0, $12     		# write back to status     
+	eret    			 		# return to EPC 
