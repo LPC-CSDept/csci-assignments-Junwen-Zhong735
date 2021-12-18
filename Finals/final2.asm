@@ -33,7 +33,7 @@ exit:
 	andi	$a0, $a0, 0x1f  	# Get the exception code     
 	bne	$a0, $zero, kdone   	# Exception Code 0 is I/O.
 
-    lui	$k0, 0xffff    			# $v0 = 0xffff0000     
+    lui	$k0, 0xffff    			# $k0 = 0xffff0000     
 	lbu	$a0, 4($k0)   			# get the input key 
 	
 	li 	$v0, 113				# $v0 = q, ascii code for q is 113
