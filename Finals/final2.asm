@@ -12,7 +12,7 @@ main:
 	mtc0	$12, $s0			# update status register 
 	
 	lui 	$t0, 0xffff 		# $t0 = 0xffff0000, memory address of reciever control register 
-	ori 	$s0, 2				# enable keyboard interrupts 
+	li 	$s0, 2				    # enable keyboard interrupts 
 	sw 	$s0, 0($t0) 			# update reciever control register
 
 loop: 
